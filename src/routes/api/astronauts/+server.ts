@@ -23,7 +23,7 @@ export const POST: RequestHandler = async ({ request }) => {
 	const astronautData: Prisma.AstronautCreateInput = {
 		name,
 		surname,
-		birthdate: birthdate ? new Date(birthdate) : undefined,
+		birthdate: birthdate ? new Date(birthdate) : '',
 		superpowers: {
 			create: (superpowers ?? [])
 				.map((superpower) => ({ name: superpower.name }))
